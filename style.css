@@ -1,0 +1,311 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --color-bg: hsl(0, 0%, 100%);
+  --color-text: hsl(0, 0%, 14%);
+  --color-title: #64caea;
+  --color-highlight: hsl(0, 33%, 84%);
+  --color-gray-28: hsl(0, 0%, 61%);
+  --color-gray-58: hsl(0, 0%, 77%);
+  --color-gray-90: hsl(0, 0%, 100%);
+
+  --font-24: 1.3rem;
+  --font-32: 1.9rem;
+  --font-80: 3.5rem;
+
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-16: 1rem;
+
+  --shadow-1: hsla(0, 0%, 0%, 0.1);
+
+  --radius-base: 9px;
+
+  --form-width: 600px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  font-weight: 300;
+  line-height: 1.4;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+label,
+input,
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* header  */
+
+header {
+  margin: 20px;
+}
+
+.main-title {
+  font-size: var(--font-80);
+  text-align: center;
+  text-shadow: 4px -5px 4px rgba(0, 0, 0, 0.41);
+}
+
+/* main container */
+
+.todo-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* empty display */
+
+.empty-state {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: var(--font-32);
+  color: skyblue;
+  font-weight: bold;
+}
+
+.empty-state__header {
+  text-align: center;
+  color: var(--color-gray-28);
+  font-weight: bold;
+  font-size: var(--font-32);
+  margin: 10px;
+}
+
+.empty-state__message {
+  text-align: center;
+  color: var(--color-gray-58);
+  font-weight: bold;
+  font-size: var(--font-24);
+  margin: 5px;
+}
+
+/* form */
+
+.form {
+  width: var(--form-width);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.task-input {
+  width: 100%;
+  height: 50px;
+  font-size: var(--font-24);
+  color: var(--color-text);
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+
+.checkIcon {
+  font-size: var(--font-32);
+  color: skyblue;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+/* ul li list */
+
+.todo-lists {
+  width: var(--form-width);
+  background-color: var(--color-gray-58);
+}
+
+.todo-lists:empty {
+  display: none;
+}
+
+.todo-lists:empty + .empty-state {
+  display: flex;
+}
+
+.todo-item {
+  font-size: var(--font-24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.item-group {
+  display: flex;
+  align-items: center;
+}
+
+.toggleCheck {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.editBtn {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: var(--radius-base);
+  background-color: skyblue;
+}
+
+.deleteBtn {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: var(--radius-base);
+  background-color: red;
+}
+
+.finished-task {
+  text-decoration: line-through;
+}
+
+/* action group */
+
+.action-container {
+  background-color: var(--color-gray-28);
+  display: flex;
+  width: var(--form-width);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: var(--font-24);
+  box-shadow: 15px 12px 19px -12px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: 15px 12px 19px -12px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 15px 12px 19px -12px rgba(0, 0, 0, 0.54);
+}
+
+.allTaskBtn,
+.freshTaskBtn,
+.completedBtn {
+  padding: 5px;
+  font-size: var(--font-24);
+  border: 2px solid var(--color-title);
+  border-radius: var(--radius-base);
+}
+
+.clearCompletedBtn {
+  padding: 5px;
+  font-size: var(--font-24);
+  background-color: red;
+  border-radius: var(--radius-base);
+}
+
+.active {
+  background-color: var(--color-title);
+}
+
+.task-input {
+  transition: border-color 0.3s ease;
+}
+
+.task-input:focus {
+  border-color: skyblue;
+}
+
+/* List item transition */
+.todo-item {
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+  background-color: var(--color-title);
+}
+
+/* Action button transition */
+.allTaskBtn,
+.freshTaskBtn,
+.completedBtn,
+.clearCompletedBtn {
+  transition: background-color 0.3s ease;
+}
+
+.allTaskBtn:hover,
+.freshTaskBtn:hover,
+.completedBtn:hover {
+  background-color: var(--color-title);
+}
+
+/* Default styles */
+
+/* ... existing CSS code ... */
+
+/* Media queries for responsive design */
+
+/* Small devices (up to 576px) */
+@media (max-width: 660px) {
+  :root {
+    --form-width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .todo-lists,
+  .action-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: var(--font-24);
+  }
+}
+
+/* Medium devices (576px to 992px) */
+@media (min-width: 660px) and (max-width: 992px) {
+  :root {
+    --form-width: 80%;
+  }
+
+  /* No changes needed for .form, .todo-lists, and .action-container */
+}
+
+/* Large devices (992px and above) */
+@media (min-width: 992px) {
+  /* No changes needed for .form, .todo-lists, and .action-container */
+}
