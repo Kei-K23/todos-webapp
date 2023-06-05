@@ -167,6 +167,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+  background-color: var(--color-title);
 }
 
 .item-group {
@@ -225,6 +230,7 @@ header {
   font-size: var(--font-24);
   border: 2px solid var(--color-title);
   border-radius: var(--radius-base);
+  transition: background-color 0.3s ease;
 }
 
 .clearCompletedBtn {
@@ -238,44 +244,12 @@ header {
   background-color: var(--color-title);
 }
 
-.task-input {
-  transition: border-color 0.3s ease;
-}
-
-.task-input:focus {
-  border-color: skyblue;
-}
-
-/* List item transition */
-.todo-item {
-  transition: background-color 0.3s ease;
-}
-
-.todo-item:hover {
-  background-color: var(--color-title);
-}
-
-/* Action button transition */
-.allTaskBtn,
-.freshTaskBtn,
-.completedBtn,
-.clearCompletedBtn {
-  transition: background-color 0.3s ease;
-}
-
 .allTaskBtn:hover,
 .freshTaskBtn:hover,
 .completedBtn:hover {
   background-color: var(--color-title);
 }
 
-/* Default styles */
-
-/* ... existing CSS code ... */
-
-/* Media queries for responsive design */
-
-/* Small devices (up to 576px) */
 @media (max-width: 660px) {
   :root {
     --form-width: 100%;
@@ -301,11 +275,7 @@ header {
   :root {
     --form-width: 80%;
   }
-
-  /* No changes needed for .form, .todo-lists, and .action-container */
 }
 
-/* Large devices (992px and above) */
 @media (min-width: 992px) {
-  /* No changes needed for .form, .todo-lists, and .action-container */
 }
