@@ -250,6 +250,22 @@ header {
   background-color: var(--color-title);
 }
 
+/* footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: var(--color-gray-28);
+  color: var(--color-gray-90);
+  font-size: var(--font-24);
+}
+
+/* media  */
+
 @media (max-width: 660px) {
   :root {
     --form-width: 100%;
