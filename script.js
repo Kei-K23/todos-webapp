@@ -228,7 +228,6 @@ function filterTodoLists() {
 // click event to make all the todo task are completed and unfinished by clicking check icon
 DOM_Elements.makeAllTasksComplete.addEventListener("click", () => {
   makeAllTasksToFinished();
-  console.log(TodoItems);
 });
 
 function setActiveBtn(element) {
