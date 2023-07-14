@@ -2,94 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/20bc52809b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon-16x16.png"
-    />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
-    <title>todos-webapp</title>
+    <title>Vite + React</title>
   </head>
   <body>
-    <header>
-      <h1 class="main-title">todos</h1>
-    </header>
-    <section class="todo-main-container">
-      <div class="empty-state" id="empty-state">
-        <i class="fa-solid fa-clipboard fa-beat icon"></i>
-        <h1 class="empty-state__header">Add your tasks</h1>
-        <p class="empty-state__message">
-          What do you want to finish systematically?
-        </p>
-      </div>
-      <form id="form" class="form">
-        <i
-          title="select all tasks"
-          id="make-all-tasks-complete"
-          class="fa-solid fa-circle-check checkIcon"
-        ></i>
-        <input
-          id="task-input"
-          class="task-input"
-          type="text"
-          placeholder="write task to do "
-          autofocus
-          required
-        />
-      </form>
-      <ul class="todo-lists" id="todo-lists"></ul>
-      <div class="action-container">
-        <span title="item left" id="remain-items" class="remain-items"> </span>
-        <div>
-          <button title="all task" id="allTask" class="allTaskBtn active">
-            All
-          </button>
-          <button title="fresh task" id="freshTask" class="freshTaskBtn">
-            Fresh
-          </button>
-          <button
-            title="completed task"
-            id="completedTask"
-            class="completedBtn"
-          >
-            Completed
-          </button>
-        </div>
-        <button
-          title="select to clear"
-          id="clearCompletedTask"
-          class="clearCompletedBtn"
-        >
-          Clear Completed
-        </button>
-      </div>
-    </section>
-    <footer>
-      <p>&copy; 2023 Todos WebApp. All rights reserved.</p>
-      <p>
-        Create with &#128153; by
-        <a href="https://github.com/Kei-K23" target="_blank">Kei-K</a>
-      </p>
-    </footer>
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
